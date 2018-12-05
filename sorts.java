@@ -1,5 +1,5 @@
 import java.util.Arrays;
-public class sorts {
+public class Sorts{
   public static void selectionsort(int[] ary){
     for (int i = 0; i < ary.length - 1; i++){
       System.out.println("Sorting: " + Arrays.toString(ary));
