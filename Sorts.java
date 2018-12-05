@@ -1,9 +1,9 @@
 import java.util.Arrays;
 public class Sorts{
   public static void selectionSort(int[] ary){
-    for (int i = 0; i < ary.length - 1; i++){
+    for (int i = 0; i < ary.length - 1; i++){//runs through list once
       int idxSmall = i;
-      for (int j = i; j < ary.length; j++){
+      for (int j = i; j < ary.length; j++){//consecutive smallest number is places in sucessive slots
         if (ary[j] < ary[idxSmall]){
           idxSmall = j;
         }
