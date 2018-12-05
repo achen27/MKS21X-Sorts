@@ -15,6 +15,15 @@ public class sorts {
     }
   }
 
+  public static boolean isSorted(int[] ary){
+    for(int i = 0; i < ary.length - 1; i++){
+      if (ary[i] > ary[i+1]){
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static void main(String[]args){
     int length = Integer.parseInt(args[0]);
     int[] list = new int[length];
@@ -24,5 +33,6 @@ public class sorts {
     System.out.println("Start: " + Arrays.toString(list));
     selectionsort(list);
     System.out.println("End: " + Arrays.toString(list));
+    System.out.println(isSorted(list));
   }
 }
