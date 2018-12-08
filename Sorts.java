@@ -26,18 +26,18 @@ public class Sorts{
   public static void bubbleSort(int[] data){
     int swaps = 0;
     int loops = data.length;
-    for (int i = 0; i < loops; i++){
+    for (int i = 0; i < loops; i++){//loop back to beginning each time
       swaps = 0;
-      for (int j = 0; j < data.length - 1 - i; j++){
+      for (int j = 0; j < data.length - 1 - i; j++){//stop one before each loop
         //System.out.println("sort...");
-        if (data[j] > data[j+1]){
+        if (data[j] > data[j+1]){//swap if the one on the left is greater
           int temp = data[j+1];
           data[j+1] = data[j];
           data[j] = temp;
           swaps++;
         }
       }
-      if (swaps == 0){
+      if (swaps == 0){//if there are no swaps in a full loop through, then the array is sorted
         return;
       }
       System.out.println("Sorting: " + Arrays.toString(data) + i);
