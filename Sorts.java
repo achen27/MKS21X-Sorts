@@ -25,19 +25,22 @@ public class Sorts{
   */
   public static void bubbleSort(int[] data){
     int swaps = 0;
-    for (int i = 0; i < data.length - i; i++){
-      if (data[i] > data[i+1]){
-        int temp = data[i+1];
-        data[i+1] = data[i];
-        data[i] = temp;
-        swaps++;
+    int loops = data.length;
+    for (int i = 0; i < loops; i++){
+      swaps = 0;
+      for (int j = 0; j < data.length - 1 - i; j++){
+        //System.out.println("sort...");
+        if (data[j] > data[j+1]){
+          int temp = data[j+1];
+          data[j+1] = data[j];
+          data[j] = temp;
+          swaps++;
+        }
       }
       if (swaps == 0){
         return;
       }
-      if (i == data.length - i){
-        i = 0;
-      }
+      System.out.println("Sorting: " + Arrays.toString(data) + i);
     }
   }
 
@@ -53,13 +56,13 @@ public class Sorts{
   public static void main(String[]args){
     int length = Integer.parseInt(args[0]);
     int[] list = new int[length];
-    for (int i = 0; i < list.length; i++){
+    /*for (int i = 0; i < list.length; i++){
       list[i] = (int) (Math.random() * 100);
-    }
-    //System.out.println("Start: " + Arrays.toString(list));
-    selectionSort(list);
-    //System.out.println("End: " + Arrays.toString(list));
-    //System.out.println(isSorted(list));
+    }*/
+    System.out.println("Start: " + Arrays.toString(list));
+    bubbleSort(list);
+    System.out.println("End: " + Arrays.toString(list));
+    System.out.println(isSorted(list));
   }
 
 }
