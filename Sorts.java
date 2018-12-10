@@ -36,11 +36,11 @@ public class Sorts{
           data[j] = temp;
           swaps++;
         }
+        //System.out.println("Sorting: " + Arrays.toString(data) + i);
       }
       if (swaps == 0){//if there are no swaps in a full loop through, then the array is sorted
         return;
       }
-      System.out.println("Sorting: " + Arrays.toString(data) + i);
     }
   }
 
@@ -54,15 +54,20 @@ public class Sorts{
   }
 
   public static void main(String[]args){
-    int length = Integer.parseInt(args[0]);
+    int length = 5;//Integer.parseInt(args[0]);
     int[] list = new int[length];
     /*for (int i = 0; i < list.length; i++){
       list[i] = (int) (Math.random() * 100);
     }*/
-    System.out.println("Start: " + Arrays.toString(list));
+    list[0]=5;
+    list[1]=1;
+    list[2]=12;
+    list[3]=-5;
+    list[4]=16;
+    //System.out.println("Start: " + Arrays.toString(list));
     bubbleSort(list);
-    System.out.println("End: " + Arrays.toString(list));
-    System.out.println(isSorted(list));
+    //System.out.println("End: " + Arrays.toString(list));
+    //System.out.println(isSorted(list));
   }
 
 }
