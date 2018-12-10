@@ -44,6 +44,18 @@ public class Sorts{
     }
   }
 
+  public static void insertionSort(int[] data){
+    for (int i = 1; i < data.length; i++){
+      int temp = data[i];
+      int position = i;
+      for (int j = i-1; data[j] > temp; j--){
+        data[j+1] = data[j];
+        position = j;
+      }
+      data[position] = temp;
+    }
+  }
+
   public static boolean isSorted(int[] ary){
     for(int i = 0; i < ary.length - 1; i++){
       if (ary[i] > ary[i+1]){
