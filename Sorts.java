@@ -48,11 +48,13 @@ public class Sorts{
     for (int i = 1; i < data.length; i++){
       int temp = data[i];
       int position = i;
-      for (int j = i-1; data[j] > temp; j--){
+      for (int j = i-1; j >= 0 && data[j] > temp; j--){
+        //System.out.println("Sorting: " + Arrays.toString(data) + "j: "+ j);
         data[j+1] = data[j];
         position = j;
       }
       data[position] = temp;
+      //System.out.println("Sorting: " + Arrays.toString(data) + "i: "+ i);
     }
   }
 
@@ -66,20 +68,20 @@ public class Sorts{
   }
 
   public static void main(String[]args){
-    int length = 5;//Integer.parseInt(args[0]);
+    int length = Integer.parseInt(args[0]);
     int[] list = new int[length];
-    /*for (int i = 0; i < list.length; i++){
+    for (int i = 0; i < list.length; i++){
       list[i] = (int) (Math.random() * 100);
-    }*/
-    list[0]=5;
-    list[1]=1;
-    list[2]=12;
-    list[3]=-5;
-    list[4]=16;
+    }
+    //list[0]=5;
+    //list[1]=1;
+    //list[2]=12;
+    //list[3]=-5;
+    //list[4]=16;
     //System.out.println("Start: " + Arrays.toString(list));
-    bubbleSort(list);
+    insertionSort(list);
     //System.out.println("End: " + Arrays.toString(list));
-    //System.out.println(isSorted(list));
+    System.out.println(isSorted(list));
   }
 
 }
