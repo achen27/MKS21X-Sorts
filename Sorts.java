@@ -24,21 +24,21 @@ public class Sorts{
   *@param data  the elements to be sorted.
   */
   public static void bubbleSort(int[] data){
-    int swaps = 0;
     int loops = data.length;
+    boolean swaps;
     for (int i = 0; i < loops; i++){//loop back to beginning each time
-      swaps = 0;
+      swaps = false;
       for (int j = 0; j < data.length - 1 - i; j++){//stop one before each loop
         //System.out.println("sort...");
         if (data[j] > data[j+1]){//swap if the one on the left is greater
           int temp = data[j+1];
           data[j+1] = data[j];
           data[j] = temp;
-          swaps++;
+          swaps = true;
         }
         //System.out.println("Sorting: " + Arrays.toString(data) + i);
       }
-      if (swaps == 0){//if there are no swaps in a full loop through, then the array is sorted
+      if (!swaps){//if there are no swaps in a full loop through, then the array is sorted
         return;
       }
     }
@@ -46,6 +46,7 @@ public class Sorts{
 
   public static void insertionSort(int[] data){
     for (int i = 1; i < data.length; i++){
+      //System.out.println("Sorting: " + Arrays.toString(data) + "i: "+ i);
       int temp = data[i];
       int position = i;
       for (int j = i-1; j >= 0 && data[j] > temp; j--){
@@ -68,20 +69,23 @@ public class Sorts{
   }
 
   public static void main(String[]args){
-    int length = Integer.parseInt(args[0]);
+    int length = 8;//Integer.parseInt(args[0]);
     int[] list = new int[length];
-    for (int i = 0; i < list.length; i++){
+    /*for (int i = 0; i < list.length; i++){
       list[i] = (int) (Math.random() * 100);
-    }
-    //list[0]=5;
-    //list[1]=1;
-    //list[2]=12;
-    //list[3]=-5;
-    //list[4]=16;
+    }*/
+    list[0]=4;
+    list[1]=3;
+    list[2]=2;
+    list[3]=10;
+    list[4]=12;
+    list[5]=1;
+    list[6]=5;
+    list[7]=6;
     //System.out.println("Start: " + Arrays.toString(list));
     insertionSort(list);
     //System.out.println("End: " + Arrays.toString(list));
-    System.out.println(isSorted(list));
+    //System.out.println(isSorted(list));
   }
 
 }
