@@ -48,13 +48,12 @@ public class Sorts{
     for (int i = 1; i < data.length; i++){
       //System.out.println("Sorting: " + Arrays.toString(data) + "i: "+ i);
       int temp = data[i];
-      int position = i;
-      for (int j = i-1; j >= 0 && data[j] > temp; j--){
+      int j = i;
+      for (j = i-1; j >= 0 && data[j] > temp; j--){
         //System.out.println("Sorting: " + Arrays.toString(data) + "j: "+ j);
         data[j+1] = data[j];
-        position = j;
       }
-      data[position] = temp;
+      data[j+1] = temp;
       //System.out.println("Sorting: " + Arrays.toString(data) + "i: "+ i);
     }
   }
@@ -69,21 +68,14 @@ public class Sorts{
   }
 
   public static void main(String[]args){
-    int length = 8;//Integer.parseInt(args[0]);
+    int length = Integer.parseInt(args[0]);
     int[] list = new int[length];
-    /*for (int i = 0; i < list.length; i++){
+    for (int i = 0; i < list.length; i++){
       list[i] = (int) (Math.random() * 100);
-    }*/
-    list[0]=4;
-    list[1]=3;
-    list[2]=2;
-    list[3]=10;
-    list[4]=12;
-    list[5]=1;
-    list[6]=5;
-    list[7]=6;
+    }
     //System.out.println("Start: " + Arrays.toString(list));
     insertionSort(list);
+
     //System.out.println("End: " + Arrays.toString(list));
     //System.out.println(isSorted(list));
   }
