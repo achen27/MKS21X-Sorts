@@ -54,7 +54,7 @@ public class Sorts{
         data[j+1] = data[j];
       }
       data[j+1] = temp;*/
-      while (j >= 0 && data[j] > temp){
+      while (j >= 0 && data[j] > temp){//shift until the number on the left is not larger
         data[j+1] = data[j];
         j--;
       }
