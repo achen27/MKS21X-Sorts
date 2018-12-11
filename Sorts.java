@@ -48,10 +48,15 @@ public class Sorts{
     for (int i = 1; i < data.length; i++){
       //System.out.println("Sorting: " + Arrays.toString(data) + "i: "+ i);
       int temp = data[i];
-      int j = i;
-      for (j = i-1; j >= 0 && data[j] > temp; j--){
+      int j = i-1;
+      /*for (j = i-1; j >= 0 && data[j] > temp; j--){
         //System.out.println("Sorting: " + Arrays.toString(data) + "j: "+ j);
         data[j+1] = data[j];
+      }
+      data[j+1] = temp;*/
+      while (j >= 0 && data[j] > temp){
+        data[j+1] = data[j];
+        j--;
       }
       data[j+1] = temp;
       //System.out.println("Sorting: " + Arrays.toString(data) + "i: "+ i);
