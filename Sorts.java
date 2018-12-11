@@ -48,17 +48,17 @@ public class Sorts{
     for (int i = 1; i < data.length; i++){
       //System.out.println("Sorting: " + Arrays.toString(data) + "i: "+ i);
       int temp = data[i];
-      int j = i-1;
+      int j = i;
       /*for (j = i-1; j >= 0 && data[j] > temp; j--){
         //System.out.println("Sorting: " + Arrays.toString(data) + "j: "+ j);
         data[j+1] = data[j];
       }
       data[j+1] = temp;*/
-      while (j >= 0 && data[j] > temp){//shift until the number on the left is not larger
-        data[j+1] = data[j];
+      while (j > 0 && data[j-1] > temp){//shift until the number on the left is not larger
+        data[j] = data[j-1];
         j--;
       }
-      data[j+1] = temp;
+      data[j] = temp;
       //System.out.println("Sorting: " + Arrays.toString(data) + "i: "+ i);
     }
   }
